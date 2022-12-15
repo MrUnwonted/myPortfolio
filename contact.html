@@ -14,6 +14,9 @@
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css">
+
+  <!-- form AJAX -->
+  
 </head>
 
 <body>
@@ -105,7 +108,8 @@
                         </div>
                         <div class="cont-right">
                             <h6>Email Me</h6>
-                            <p><a href="mailto: arjunchandran2k@gmail.com" class="mail">arjunchandran2k@gmail.com</a></p>
+                            <p><a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCGmKTfLWJRVLGNlLDlpGtlMdzMZdnGfpsqrrJLwWZnrDDLTFrJHSftJjZjHpkNCsnJcjB"
+                               target="_blank" class="mail">arjunchandran2k@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="cont-top margin-up">
@@ -119,18 +123,18 @@
                     </div>
                 </div>
                 <div class="map-content-9">
-                    <form action="https://sendmail.arjunchandran2k@gmail.com" method="get">
+                    <form id="submit-form" action="https://script.google.com/macros/s/AKfycbyXbwI7nYdzfxLYw3VeJUNhjuapURUkW2r-XbQn05sMqwtOd1uqFvFczfLrvCc8g9Mx/exec" method="post">
                         <div class="twice-two">
-                            <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="Name"
+                            <input type="text" class="form-control" name="Name" id="Name" placeholder="Name"
                                 required="">
-                            <input type="email" class="form-control" name="w3lSender" id="w3lSender" placeholder="Email"
+                            <input type="email" class="form-control" name="Sender" id="Sender" placeholder="Email"
                                 required="">
                         </div>
                         <div class="twice">
-                            <input type="text" class="form-control" name="w3lSubject" id="w3lSubject"
+                            <input type="text" class="form-control" name="Subject" id="Subject"
                                 placeholder="Subject" required="">
                         </div>
-                        <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message"
+                        <textarea name="Message" class="form-control" id="Message" placeholder="Message"
                             required=""></textarea>
                         <div class="text-right">
                             <button type="submit" class="btn btn-primary btn-style mt-4">Send Message</button>
@@ -403,6 +407,29 @@
 
 <!-- bootstrap js -->
 <script src="assets/js/bootstrap.min.js"></script>
+
+<!-- //Form Submission -->
+<script>
+  $("#submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycbyXbwI7nYdzfxLYw3VeJUNhjuapURUkW2r-XbQn05sMqwtOd1uqFvFczfLrvCc8g9Mx/exec",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Form submitted successfully")
+              window.location.reload()
+              window.location.href="index.html"
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
+      })
+  })
+</script>
+<!-- Form Ends here -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </body>
 

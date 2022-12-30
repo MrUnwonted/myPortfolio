@@ -1,3 +1,3 @@
 # myPortfolio
 
-<a href="https://mrunwonted.github.io/myPortfolio/" >Portfolio    </a>
+<a href="https://mrunwonted.github.io/myPortfolio/" target="_blank">Portfolio    </a>
